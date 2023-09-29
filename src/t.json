@@ -1,0 +1,92 @@
+[
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What is the name of the robot in the 1951 science fiction film classic &#039;The Day the Earth Stood Still&#039;?",
+        "correct_answer": "Gort",
+        "incorrect_answers": [
+            "Robby",
+            "Colossus",
+            "Box"
+        ],
+        "allAnswers": [
+            "Robby",
+            "Gort",
+            "Colossus",
+            "Box"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "This movie contains the quote, &quot;I love the smell of napalm in the morning!&quot;",
+        "correct_answer": "Apocalypse Now",
+        "incorrect_answers": [
+            "Platoon",
+            "The Deer Hunter",
+            "Full Metal Jacket"
+        ],
+        "allAnswers": [
+            "The Deer Hunter",
+            "Full Metal Jacket",
+            "Apocalypse Now",
+            "Platoon"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which movie of film director Stanley Kubrick is known to be an adaptation of a Stephen King novel?",
+        "correct_answer": "The Shining",
+        "incorrect_answers": [
+            "2001: A Space Odyssey",
+            " Dr. Strangelove ",
+            "Eyes Wide Shut"
+        ],
+        "allAnswers": [
+            "Eyes Wide Shut",
+            " Dr. Strangelove ",
+            "2001: A Space Odyssey",
+            "The Shining"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Darth Vader&#039;s famous reveal to Luke is iconic. But which of these is the right one?",
+        "correct_answer": "&quot;No. I am your father.&quot;",
+        "incorrect_answers": [
+            "&quot;Luke, I am your father.&quot;",
+            "&quot;You&#039;re wrong. I am your father.&quot;",
+            "&quot;The truth is that I am your father.&quot;"
+        ],
+        "allAnswers": [
+            "&quot;You&#039;re wrong. I am your father.&quot;",
+            "&quot;Luke, I am your father.&quot;",
+            "&quot;No. I am your father.&quot;",
+            "&quot;The truth is that I am your father.&quot;"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "What is the birth name of Michael Caine?",
+        "correct_answer": "Maurice Micklewhite",
+        "incorrect_answers": [
+            "Morris Coleman",
+            "Carl Myers",
+            "Martin Michaels"
+        ],
+        "allAnswers": [
+            "Morris Coleman",
+            "Martin Michaels",
+            "Maurice Micklewhite",
+            "Carl Myers"
+        ]
+    }
+]
