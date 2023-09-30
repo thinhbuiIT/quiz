@@ -13,13 +13,9 @@ export default function QuizSelect() {
     }, [])
 
     const HandleCreate = () => {
-        if (cate && level) {
-            dispatch({ type: GET_QUIZ, payload: { cate, level } })
-        } else {
-            alert('Select choose')
-        }
+        cate && level ? dispatch({ type: GET_QUIZ, payload: { cate, level } })
+            : alert('Select category and difficulty')
     }
-
     return (
         <div className='quiz__select'>
             <h2 className='quiz__select--title uppercase text-center p-4 font-bold text-2xl'>quiz marker</h2>

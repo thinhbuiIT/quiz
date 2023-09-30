@@ -1,4 +1,4 @@
-import { SET_CATEGORY, SET_QUIZ } from "../actions/actHome"
+import { REMOVE_QUIZ, SET_CATEGORY, SET_QUIZ } from "../actions/actHome"
 
 const initialState = {
     category: [],
@@ -16,6 +16,11 @@ const rdcHome = (state = initialState, action) => {
             return {
                 ...state,
                 quiz: action.payload
+            }
+        case REMOVE_QUIZ:
+            return {
+                ...state,
+                quiz: []
             }
         default:
             return state

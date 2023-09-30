@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import he from 'he';
 
 import shuffleArray from '../../utils/shuffleArray';
 
@@ -40,15 +41,15 @@ export default function QuizContent() {
             <div className='quiz__content'>
 
                 {lsQuestion?.map((items, index) => (
-                    <div className='quiz__question' key={index}>
-                        <p className='quiz__question--title'>{items.question}</p>
-                        <ul className='quiz__question--answer flex mt-5'>
+                    <div className='quiz__question mb-6' key={index}>
+                        <p className='quiz__question--title'>{he.decode(items.question)}</p>
+                        <ul className='quiz__question--answer flex mt-3'>
                             {items.allAnswers.map((answer, i) => (
                                 <li className='mr-2' key={i}>
                                     <button
-                                        className={`border px-4 rounded-lg border-green-600 text-green-600 p-1 hover:bg-green-500 hover:text-white active:bg-black ${selectAnswer[index] === answer ? 'bg-green-500 text-white' : ''}`}
+                                        className={`border px-4 rounded-lg border-green-600 text-green-600 p-1 hover:bg-green-500 hover:text-white ${selectAnswer[index] === answer ? 'bg-green-500 text-white' : ''}`}
                                         onClick={() => HandleClick(items, answer, index)}
-                                    >{answer}</button>
+                                    >{he.decode(answer)}</button>
                                 </li>
                             ))}
                         </ul>

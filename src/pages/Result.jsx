@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import he from 'he'
 
+import './Result.css'
+import { useDispatch } from 'react-redux'
 export default function Result() {
     const [lsCorrect, setLsCorrect] = useState([])
     const nav = useNavigate()
     const location = useLocation()
     const { lsQuestion, lsChoose } = location.state
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         let c = []
@@ -30,9 +35,9 @@ export default function Result() {
             <div className='container'>
                 <div className='result__content '>
                     {lsQuestion?.map((items, index) => (
-                        <div className='quiz__question' key={index}>
-                            <p className='quiz__question--title'>{items.question}</p>
-                            <ul className='quiz__question--answer flex mt-5'>
+                        <div className='quiz__question mb-6' key={index}>
+                            <p className='quiz__question--title'>{he.decode(items.question)}</p>
+                            <ul className='quiz__question--answer flex'>
                                 {items.allAnswers.map((answer, i) => {
                                     const isSelected = lsChoose.some(
                                         (userAnswer) =>
@@ -45,10 +50,10 @@ export default function Result() {
                                     return (
                                         <li className='mr-2' key={i}>
                                             <button
-                                                className={`border px-4 rounded-lg  p-1 ${isSelected || isCorrect ? answer === items.correct_answer ? 'bg-green-600 text-white' : 'bg-red-600 text-white' : ''}`
+                                                className={`border px-4 rounded-lg  p-1 mt-2 ${isSelected || isCorrect ? answer === items.correct_answer ? 'bg-green-600 text-white' : 'bg-red-600 text-white' : ''}`
                                                 }
                                             >
-                                                {answer}
+                                                {he.decode(answer)}
                                             </button>
                                         </li>
                                     );
@@ -58,7 +63,7 @@ export default function Result() {
                     ))}
                     {<div className='quiz__score'>
                         <p
-                            className={`bg-${buttonColor}-600 rounded-sm p-1 mt-5 text-center`}
+                            className={`${buttonColor} rounded-sm p-1 mt-5 text-center uppercase font-bold`}
                         >
                             you scored {lsCorrect.length} out of {lsQuestion.length}
                         </p>
@@ -66,7 +71,10 @@ export default function Result() {
 
                     <button
                         className='border text-center rounded-lg text-white w-full p-2 mt-10 bg-slate-500'
-                        onClick={() => nav('/')}
+                        onClick={() => {
+                            dispatch({ type: 'REMOVE_QUIZ' })
+                            nav('/')
+                        }}
                     >Create New Quiz</button>
                 </div>
             </div>
