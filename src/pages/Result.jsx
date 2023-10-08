@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import he from 'he'
 
 import './Result.css'
-import { useDispatch } from 'react-redux'
 export default function Result() {
-    const [lsCorrect, setLsCorrect] = useState([])
     const nav = useNavigate()
+    const [lsCorrect, setLsCorrect] = useState([])
     const location = useLocation()
     const { lsQuestion, lsChoose } = location.state
 
     const dispatch = useDispatch()
 
     useEffect(() => {
+
         let c = []
         lsQuestion.forEach(question => {
-            lsChoose.forEach(choose => choose.answer == question.correct_answer && c.push(choose))
+            lsChoose.forEach(choose => choose.answer == question.correct_answer && [...c, choose])
         })
         setLsCorrect(c)
 
